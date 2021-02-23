@@ -1,0 +1,10 @@
+footer {
+    background-color: $backgroundColorBody;
+    p {
+        font-size: 1.3em;
+        color: $colorTextHeader;
+        text-align: center;
+        padding: 1em 0;
+        border-top: 0.1em solid $colorTextHeader;
+    }
+}

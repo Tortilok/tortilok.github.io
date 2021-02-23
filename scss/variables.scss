@@ -1,0 +1,22 @@
+// header
+$backgroundColorHeader: #121619;
+$colorTextHeader: #52f114; 
+$backgroundColorBody: #121619;
+$backgroundColorColumnAnimated: #212324;
+// main
+$colorTextTerminal: #4ad715;
+$backgroundColorTerminalText: #212324;
+$backgroundTerminal: #1d252b;
+// fonts
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url(../img/svg/узор3.png);
+    background-position-x: 50%;
+    background-position-y: 40%;
+    background-repeat: no-repeat;
+    background-color: $backgroundColorBody;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
