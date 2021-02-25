@@ -41,8 +41,7 @@
                 </div>
             </div>
             <div class="column">
-                <span>IP: </span>
-                <span id="ipAdress">109.197.31.249</span>
+                <span id="ipAdress">IP:192.168.5.103</span>
             </div>
             <div class="column">
                 <div class="column_container">
@@ -55,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="row_wrapper">
-                            system: Привет, введи команду help для просмотра списка команд.
+                            <span id="main_text">system: Привет, введи команду help для просмотра списка команд.</span>
                         </div>
                     </div>
                     <div class="row">
@@ -70,21 +69,21 @@
                     </div>
                     <div class="row">
                         <div class="row_wrapper">
-                            <a href="#" onclick="Parser()">Отправить</a>
+                            <a href="#" onclick="Parser()" id="button">Отправить</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="column">
                 <div class="column_wrapper">
-                    <div class="box">
-                        <p>192.168.1.1</p>
+                    <div id="box1" class="box" >
+                        <p>192.168.5.122</p>
                     </div>
-                    <div class="box">
-                        <p>127.302.35.532</p>
+                    <div id="box2" class="box" >
+                        <p>127.200.35.1</p>
                     </div>
-                    <div class="box">
-                        <p>157.433.77.332</p>
+                    <div id="box3" class="box" >
+                        <p>157.182.77.3</p>
                     </div>
                 </div>
             </div>
@@ -105,6 +104,7 @@
     <script src="js/prokrutka.js"></script>
     <script src="js/collapseNav.js"></script>
     <script src="js/dispatcher.js"></script>
+    <script src="js/listener.js"></script>
 </body>
 
 </html>
