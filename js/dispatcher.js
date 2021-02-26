@@ -3,7 +3,7 @@ function Parser() {
 
   if (command == "show") {
     document.getElementById("spinningTheWheel").style.display = 'flex';
-    document.getElementById("main_text").innerHTML = "Вот тебе колесо помощник в решение моей задачки.<br>";
+    document.getElementById("main_text").innerHTML = "Вот тебе колесо помощник в решение моей задачки.<br>Прфцс р умъцф цлхрф юймъцф?";
     document.getElementById("vvod").value = "";
 
     const TypeExternal = new CircleType(document.getElementById('text1'));
