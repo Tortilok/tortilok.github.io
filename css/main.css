@@ -473,7 +473,7 @@ body main section .column:nth-of-type(4) .column_wrapper a{
 
 body main section .column:nth-of-type(4) .column_wrapper #win_button{
   display: none;
-  width: 15em;
+  width: 17em;
   height: 2.1em;
   background-color: #212324;
   padding: 0.5em 1em;
