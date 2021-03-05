@@ -1,15 +1,23 @@
+var count1 = 0;
+
 function Parser() {
   var command = document.getElementById("vvod").value;
 
   if (command == "show") {
     document.getElementById("spinningTheWheel").style.display = 'flex';
-    document.getElementById("main_text").innerHTML = "Вот тебе колесо помощник в решение моей задачки.<br>Прфцс р умъцф цлхрф юймъцф?";
+    if (count1 <= 2) {
+      document.getElementById("main_text").innerHTML = "Вот тебе колесо помощник в решение моей задачки.<br>Прфцс р умъцф цлхрф юймъцф?";
+    }
+    else {
+      document.getElementById("main_text").innerHTML = "Вот тебе колесо помощник в решение моей задачки.<brОцт еяп млтефицдципир бцтжт ьмшфд?";
+    }
+
     document.getElementById("vvod").value = "";
 
     const TypeExternal = new CircleType(document.getElementById('text1'));
     const TypeInternal = new CircleType(document.getElementById('text2'));
-    TypeExternal.radius().dir(1);
-    TypeInternal.radius().dir(1);
+    TypeExternal.radius(0).dir(1);
+    TypeInternal.radius(0).dir(1);
   }
 
   else if (command == "help") {
@@ -74,11 +82,35 @@ function Parser() {
 
     if (temp[1] == "192.168.5.122") {
       //8 сдвиг
-      if (temp[2] == "мутз") {
-        document.getElementById("win").style.display= "flex";
+      if (temp[2].toLowerCase() == "мутз") {
+        document.getElementById("main_text").innerHTML = "Молодец ты решил верно мою загадку.<br>Держи тогда следующую:<br>Оцт еяп млтефицдципир бцтжт ьмшфд?";
+        count1 = count1 + 2;
+      //  document.getElementById("win").style.display= "flex";
+      }
+      else if (count1 == 1) {
+        document.getElementById("main_text").innerHTML = "Здесь используется сдвиг на 8 букв.<br>Прфцс р умъцф цлхрф юймъцф?";
+        count1 = count1 + 1;
+      }
+      else if (count1 == 2) {
+        document.getElementById("main_text").innerHTML = "Ответ: елка.<br>Сама загадка звучала так: Зимой и летом одним цветом?<br>Сдвиг был на 8 букв.<br> Но не расстраивайся вот тебе еще одна загадка: Оцт еяп млтефицдципир бцтжт ьмшфд?";
+        count1 = count1 + 1;
+      }
+      //4 сдвиг
+      else if (temp[2].toLowerCase() == "ъилдфа") {
+        document.getElementById("main_text").innerHTML = "Ура-Ура! Все верно!<br>У тебя появилась кнопка и по ней ты можешь оставить свой отзыв об игре.";
+      //  document.getElementById("win").style.display= "flex";
+      }
+      else if (count1 == 3) {
+        document.getElementById("main_text").innerHTML = "Здесь используется сдвиг на 4 буквы.<br>Оцт еяп млтефицдципир бцтжт ьмшфд?";
+        count1 = count1 + 1;
+      }
+      else if (count1 >= 4) {
+        document.getElementById("main_text").innerHTML = "Ответ: цезарь.<br>Сама загадка звучала так: Кто был изобретателем шифра?<br>Сдвиг был на 4 буквы.<br> Но не расстраивайся все еще получится в следующий раз, а пока ты можешь оставить свой отзыв по кнопке которая появилась.";
+        count1 = count1 + 1;
       }
       else {
         document.getElementById("main_text").innerHTML = "Ты чего обзываешься? Кажется твои сообщения были перехвачены.<br>Я буду с тобой общаться после решение моей загадки:<br>Прфцс р умъцф цлхрф юймъцф?<br>Для вызова помощника напиши show.";
+        count1 = count1 + 1;
       }
     }
     else {
