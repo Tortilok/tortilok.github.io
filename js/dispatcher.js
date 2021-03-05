@@ -1,4 +1,5 @@
 var count1 = 0;
+var flag = 1;
 
 function Parser() {
   var command = document.getElementById("vvod").value;
@@ -14,10 +15,13 @@ function Parser() {
 
     document.getElementById("vvod").value = "";
 
-    const TypeExternal = new CircleType(document.getElementById('text1'));
-    const TypeInternal = new CircleType(document.getElementById('text2'));
-    TypeExternal.radius(0).dir(1);
-    TypeInternal.radius(0).dir(1);
+    if (flag == 1) {
+      flag = 0;
+      const TypeExternal = new CircleType(document.getElementById('text1'));
+      const TypeInternal = new CircleType(document.getElementById('text2'));
+      TypeExternal.radius(0).dir(1);
+      TypeInternal.radius(0).dir(1);
+    }
   }
 
   else if (command == "help") {
@@ -84,7 +88,7 @@ function Parser() {
       //8 сдвиг
       if (temp[2].toLowerCase() == "мутз") {
         document.getElementById("main_text").innerHTML = "Молодец ты решил верно мою загадку.<br>Держи тогда следующую:<br>Оцт еяп млтефицдципир бцтжт ьмшфд?";
-        count1 = count1 + 2;
+        count1 = 3;
       //  document.getElementById("win").style.display= "flex";
       }
       else if (count1 == 1) {
@@ -98,7 +102,7 @@ function Parser() {
       //4 сдвиг
       else if (temp[2].toLowerCase() == "ъилдфа") {
         document.getElementById("main_text").innerHTML = "Ура-Ура! Все верно!<br>У тебя появилась кнопка и по ней ты можешь оставить свой отзыв об игре.";
-      //  document.getElementById("win").style.display= "flex";
+        document.getElementById("win_button").style.display= "flex";
       }
       else if (count1 == 3) {
         document.getElementById("main_text").innerHTML = "Здесь используется сдвиг на 4 буквы.<br>Оцт еяп млтефицдципир бцтжт ьмшфд?";
@@ -106,7 +110,7 @@ function Parser() {
       }
       else if (count1 >= 4) {
         document.getElementById("main_text").innerHTML = "Ответ: цезарь.<br>Сама загадка звучала так: Кто был изобретателем шифра?<br>Сдвиг был на 4 буквы.<br> Но не расстраивайся все еще получится в следующий раз, а пока ты можешь оставить свой отзыв по кнопке которая появилась.";
-        count1 = count1 + 1;
+        document.getElementById("win_button").style.display= "flex";
       }
       else {
         document.getElementById("main_text").innerHTML = "Ты чего обзываешься? Кажется твои сообщения были перехвачены.<br>Я буду с тобой общаться после решение моей загадки:<br>Прфцс р умъцф цлхрф юймъцф?<br>Для вызова помощника напиши show.";
